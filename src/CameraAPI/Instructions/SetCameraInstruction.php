@@ -60,6 +60,24 @@ final class SetCameraInstruction extends CameraInstruction
 
     public function send(Player $player): void
     {
-        $player->getNetworkSession()->sendDataPacket(CameraInstructionPacket::create(new CameraSetInstruction(array_search($this->cameraPreset, CameraPresets::getAll(), true), $this->ease, $this->cameraPosition, $this->rotation, $this->facingPosition, $this->viewOffset, $this->entityOffset, null), null, null, null, null));
+        $player->getNetworkSession()->sendDataPacket(
+            CameraInstructionPacket::create(
+                new CameraSetInstruction(
+                    array_search($this->cameraPreset, CameraPresets::getAll(), true),
+                    $this->ease,
+                    $this->cameraPosition,
+                    $this->rotation,
+                    $this->facingPosition,
+                    $this->viewOffset,
+                    $this->entityOffset,
+                    null,
+                    null
+                ),
+                null,
+                null,
+                null,
+                null
+            )
+        );
     }
 }

@@ -71,7 +71,7 @@ final class SetCameraInstruction extends CameraInstruction
                     $this->viewOffset,
                     $this->entityOffset,
                     null,
-                    null
+                    false
                 ),
                 null,
                 null,
